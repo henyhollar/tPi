@@ -40,7 +40,7 @@ class RegisterSerializer(serializers.ModelSerializer):
     def save(self):
         user = User.objects.create_user(self.validated_data['username'], self.validated_data['password'])
         user.identity = self.validated_data['identity']
-
+        user.is_staff = True if self.context['user_type'] == 'staff' else False
         mac_add = MacAddress.objects.create(owner=user, mac_add=self.context['mac_add'])
 
         user.save()

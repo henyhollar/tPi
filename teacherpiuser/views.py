@@ -34,7 +34,8 @@ class RegisterView(APIView):
 
     def post(self, request):
         #check if the intending user is a member of any class at all
-        serializer = RegisterSerializer(data=request.data, context={'mac_add': get_mac_add(request)})
+        serializer = RegisterSerializer(data=request.data, context={'mac_add': get_mac_add(request),
+                                                                    'user_type': request.data['user_type']})
         if serializer.is_valid():
             serializer.save()
             #return Response(serializer.data, status=status.HTTP_201_CREATED)
