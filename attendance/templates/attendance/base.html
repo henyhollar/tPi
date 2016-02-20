@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Attendace - {% block title %}Are you here for the class!{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block body_block %}{% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="/attendance/restricted/">Restricted Page</a></li>
+                <li><a href="/attendance/logout/">Logout</a></li>
+                <li><a href="/attendance/add_category/">Add a New Category</a></li>
+            {% else %}
+                <li><a href="/attendance/register/">Register Here</a></li>
+                <li><a href="/attendance/login/">Login</a></li>
+            {% endif %}
+
+                <li><a href="/attendance/about/">About</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
