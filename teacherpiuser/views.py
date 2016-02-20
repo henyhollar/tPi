@@ -1,18 +1,16 @@
 from rest_framework import generics, permissions, status, exceptions
 from rest_framework.views import APIView
-from serializers import RegisterSerializer
+from serializers import RegisterSerializer, AuthTokenSerializer
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import parsers, renderers
-from rest_framework.authtoken.serializers import AuthTokenSerializer
+#from rest_framework.authtoken.serializers import AuthTokenSerializer
 
 from django.contrib.auth import logout
 from django.core.exceptions import PermissionDenied
 
 from django.contrib.auth import get_user_model
 from .models import DefaultPass, MacAddress
-from redis_ds.redis_list import RedisList
-from redis import StrictRedis
 
 from ipware.ip import get_ip
 from subprocess import Popen, PIPE
@@ -76,29 +74,11 @@ class ObtainAuthToken(APIView):
     serializer_class = AuthTokenSerializer
 
     def post(self, request, *args, **kwargs):
-        username = request.data['identity'].replace('/', '')
-        if request.data['user_type'] == 'student':
-            password = 'teacherpiuser'
-        else:
-            d_password = DefaultPass.objects.get(id=1)
-            if request.data['password'] == d_password:
-                password = d_password
-            else:
-                return Response('Please report this case to the admin*', status=status.HTTP_400_BAD_REQUEST)
+        password = request.data.get('password', None)
 
-        request.data.update({'username': username, 'password': password})
-
-        r = StrictRedis(host='localhost', port=6379, db=0)
-        course_code = r.keys('active_class:*')
-        course_code = course_code[0].split(':')[1] if len(course_code) > 0 else ''
-        if not course_code:
-            return Response('There is no active class. Report to your lecturer')
-
-        redis_can_take_course = RedisList(course_code)
-        if request.data['identity'] not in redis_can_take_course[:]:
-            return Response('There is no active class for this matric number')
-
-        serializer = self.serializer_class(data=request.data)
+        serializer = self.serializer_class(data=request.data, context={'user_type': request.data['user_type'],
+                                                                       'password': password,
+                                                                       'identity': request.data['identity'] })
         if serializer.is_valid():
             user = serializer.validated_data['user']
             mac_add = get_mac_add(request)
@@ -112,7 +92,8 @@ class ObtainAuthToken(APIView):
             except MacAddress.DoesNotExist:
                 user.macaddress_set(mac_add=mac_add)  # warn of silent registering of devices
 
-        elif not serializer.is_valid() and ('username' in serializer.errors):   # print username value of the error
+        elif not serializer.is_valid() and serializer.errors['non_field_errors']==["Unable to log in with provided credentials."]:
+            print serializer.errors
             view = RegisterView.as_view()
             view(request, *args, **kwargs)
             user = User.objects.get(username=request.data['username'])
