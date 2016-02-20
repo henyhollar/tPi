@@ -79,7 +79,7 @@ class ObtainAuthToken(APIView):
 
         serializer = self.serializer_class(data=request.data, context={'user_type': request.data['user_type'],
                                                                        'password': password,
-                                                                       'identity': request.data['identity'] })
+                                                                       'identity': request.data['identity']})
         if serializer.is_valid():
             user = serializer.validated_data['user']
             mac_add = get_mac_add(request)
@@ -97,7 +97,7 @@ class ObtainAuthToken(APIView):
             print serializer.errors
             view = RegisterView.as_view()
             view(request, *args, **kwargs)
-            user = User.objects.get(username=request.data['username'])
+            user = User.objects.get(username=request.data['identity'].replace('/', ''))
             token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
 

@@ -47,11 +47,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         mac_add.save()
 
 
-
-
-
-
-
 class AuthTokenSerializer(serializers.ModelSerializer):
     class Meta:
         model = TeacherPiUser
