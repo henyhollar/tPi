@@ -7,15 +7,14 @@ from redis import StrictRedis
 from django.contrib.auth import authenticate
 from django.utils.translation import ugettext_lazy as _
 
-from rest_framework import serializers
-
 User = get_user_model()
 
 
 class RegisterSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = TeacherPiUser
-        fields = ('identity', )
+        fields = ('identity',)
 
     def validate_identity(self, value):
         identity = value.upper()
@@ -38,7 +37,8 @@ class RegisterSerializer(serializers.ModelSerializer):
             return data
 
     def save(self):
-        user = User.objects.create_user(self.validated_data['username'], self.validated_data['password'])
+        password = self.validated_data['password'] if self.context['user_type'] == 'staff' else 'teacherpiuser'
+        user = User.objects.create_user(self.validated_data['identity'].replace('/', ''), password=password)
         user.identity = self.validated_data['identity']
         user.is_staff = True if self.context['user_type'] == 'staff' else False
         mac_add = MacAddress.objects.create(owner=user, mac_add=self.context['mac_add'])
@@ -47,24 +47,23 @@ class RegisterSerializer(serializers.ModelSerializer):
         mac_add.save()
 
 
-class AuthTokenSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TeacherPiUser
-        fields = ('identity', )
+class AuthTokenSerializer(serializers.Serializer):
+    identity = serializers.CharField()
 
-    def validate(self, attrs):
-        username = self.context['identity'].replace('/', '')
+    def validate(self, value):
+        username = value.get('identity').replace('/', '')
+
         if self.context['user_type']=='student':
             password = 'teacherpiuser'
             r = StrictRedis(host='localhost', port=6379, db=0)
             course_code = r.keys('active_class:*')
             course_code = course_code[0].split(':')[1] if len(course_code) > 0 else ''
             if not course_code:
-                raise serializers.ValidationError('There is no active class. Report to your lecturer')
+                raise serializers.ValidationError('There is no active class')
 
             redis_can_take_course = RedisList(course_code)
             if self.context['identity'] not in redis_can_take_course[:]:
-                raise serializers.ValidationError('There is no active class for this matric number')
+                raise serializers.ValidationError('No class active for Matric number')
 
         elif self.context['user_type']=='staff':
             d_password = DefaultPass.objects.get(id=1)
@@ -87,5 +86,5 @@ class AuthTokenSerializer(serializers.ModelSerializer):
             msg = _('Must include "username" and "password".')
             raise serializers.ValidationError(msg)
 
-        attrs['user'] = user
-        return attrs
+        value['user'] = user
+        return value

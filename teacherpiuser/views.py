@@ -11,6 +11,8 @@ from django.core.exceptions import PermissionDenied
 
 from django.contrib.auth import get_user_model
 from .models import DefaultPass, MacAddress
+from redis_ds.redis_list import RedisList
+from redis import StrictRedis
 
 from ipware.ip import get_ip
 from subprocess import Popen, PIPE
@@ -38,9 +40,9 @@ class RegisterView(APIView):
                                                                     'user_type': request.data['user_type']})
         if serializer.is_valid():
             serializer.save()
-            #return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        raise Exception('Registration not successful')
+        raise Exception(serializer.errors)
 
 
 class DeleteToken(APIView):
@@ -91,12 +93,14 @@ class ObtainAuthToken(APIView):
                 else:
                     raise PermissionDenied('Please use the devices registered for you')
             except MacAddress.DoesNotExist:
-                user.macaddress_set(mac_add=mac_add)  # warn of silent registering of devices
+                MacAddress.objects.create(owner=user, mac_add=mac_add)  # warn of silent registering of devices
 
-        elif not serializer.is_valid() and serializer.errors['non_field_errors']==["Unable to log in with provided credentials."]:
-            print serializer.errors
+        elif not serializer.is_valid() and ('There is no active class' in serializer.errors or
+                                            'No class active for Matric number' in serializer.errors or
+                                            'Please report this case to the admin*' in serializer.errors):
             view = RegisterView.as_view()
             view(request, *args, **kwargs)
+
             user = User.objects.get(username=request.data['identity'].replace('/', ''))
             token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
