@@ -37,7 +37,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             return data
 
     def save(self):
-        password = self.validated_data['password'] if self.context['user_type'] == 'staff' else 'teacherpiuser'
+        password = DefaultPass.objects.get(id=1).password if self.context['user_type'] == 'staff' else 'teacherpiuser'
         user = User.objects.create_user(self.validated_data['identity'].replace('/', ''), password=password)
         user.identity = self.validated_data['identity']
         user.is_staff = True if self.context['user_type'] == 'staff' else False
@@ -74,14 +74,17 @@ class AuthTokenSerializer(serializers.Serializer):
 
         if username and password:
             user = authenticate(username=username, password=password)
-
             if user:
                 if not user.is_active:
                     msg = _('User account is disabled.')
                     raise serializers.ValidationError(msg)
             else:
-                msg = _('Unable to log in with provided credentials.')
-                raise serializers.ValidationError(msg)
+                try:
+                    User.objects.get(username=username)
+                    raise serializers.ValidationError('Please choose the correct user type')
+                except User.DoesNotExist:
+                    msg = _('Unable to log in with provided credentials.')
+                    raise serializers.ValidationError(msg)
         else:
             msg = _('Must include "username" and "password".')
             raise serializers.ValidationError(msg)

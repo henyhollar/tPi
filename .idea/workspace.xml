@@ -32,11 +32,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="0" selection-start="4248" selection-end="4248" vertical-scroll-proportion="-63.68" vertical-offset="159" max-vertical-offset="2125">
-              <folding />
+            <state line="116" column="58" selection-start="4332" selection-end="4332" vertical-scroll-proportion="0.40697673" vertical-offset="1832" max-vertical-offset="2176">
+              <folding>
+                <element signature="e#0#68#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,13 +52,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="serializers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teacherpiuser/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="17" selection-start="2795" selection-end="2795" vertical-scroll-proportion="0.42242992" vertical-offset="981" max-vertical-offset="1615">
+            <state line="31" column="29" selection-start="993" selection-end="993" vertical-scroll-proportion="31.8" vertical-offset="1322" max-vertical-offset="1666">
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1785">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,8 +123,8 @@
         <option value="$PROJECT_DIR$/course/admin.py" />
         <option value="$PROJECT_DIR$/teacherPi/urls.py" />
         <option value="$PROJECT_DIR$/teacherpiuser/models.py" />
-        <option value="$PROJECT_DIR$/teacherpiuser/serializers.py" />
         <option value="$PROJECT_DIR$/teacherpiuser/views.py" />
+        <option value="$PROJECT_DIR$/teacherpiuser/serializers.py" />
       </list>
     </option>
   </component>
@@ -149,6 +160,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,9 +193,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teacherPi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teacherPi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,11 +476,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26136363" sideWeight="0.67235494" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2659091" sideWeight="0.6740614" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32593855" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -500,11 +525,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/attendance/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="633" selection-end="633" vertical-scroll-proportion="0.73024523" vertical-offset="89" max-vertical-offset="629" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/attendance/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="32" selection-start="281" selection-end="281" vertical-scroll-proportion="0.27792916" vertical-offset="0" max-vertical-offset="1819" />
@@ -513,11 +533,6 @@
     <entry file="file://$PROJECT_DIR$/redis_ds/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/course/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.98504674" vertical-offset="34" max-vertical-offset="1785" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/course/models.py">
@@ -582,18 +597,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
+    <entry file="file://$PROJECT_DIR$/course/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="0" selection-start="4248" selection-end="4248" vertical-scroll-proportion="-63.68" vertical-offset="159" max-vertical-offset="2125">
+        <state line="33" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/rest_framework/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="429" column="8" selection-start="15994" selection-end="15994" vertical-scroll-proportion="0.3314121" vertical-offset="6872" max-vertical-offset="19176" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/teacherpiuser/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="17" selection-start="2795" selection-end="2795" vertical-scroll-proportion="0.42242992" vertical-offset="981" max-vertical-offset="1615">
+        <state line="31" column="29" selection-start="993" selection-end="993" vertical-scroll-proportion="31.8" vertical-offset="1322" max-vertical-offset="1666">
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="58" selection-start="4332" selection-end="4332" vertical-scroll-proportion="0.40697673" vertical-offset="1832" max-vertical-offset="2176">
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
