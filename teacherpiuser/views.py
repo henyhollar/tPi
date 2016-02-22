@@ -4,7 +4,6 @@ from serializers import RegisterSerializer, AuthTokenSerializer
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import parsers, renderers
-#from rest_framework.authtoken.serializers import AuthTokenSerializer
 
 from django.contrib.auth import logout
 from django.core.exceptions import PermissionDenied
@@ -99,7 +98,7 @@ class ObtainAuthToken(APIView):
             if ["Unable to log in with provided credentials."] in serializer.errors.itervalues():
                 view = RegisterView()
                 view.post(request)
-                user = User.objects.get(username=request.data['identity'].replace('/', ''))
+                user = User.objects.get(username=request.data['identity'].replace('/', '').upper())
                 token, created = Token.objects.get_or_create(user=user)
                 return Response({'token': token.key})
             else:
@@ -114,7 +113,7 @@ def get_mac_add(request):
     if ip is not None:
         pid = Popen(["arp", "-n", ip], stdout=PIPE)
         s = pid.communicate()[0]
-        mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", s).groups()[0]
+        mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", s).groups()[0]  # use for matric no.
 
         return mac
 

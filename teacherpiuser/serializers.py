@@ -62,7 +62,7 @@ class AuthTokenSerializer(serializers.Serializer):
                 raise serializers.ValidationError('There is no active class')
 
             redis_can_take_course = RedisList(course_code)
-            if self.context['identity'] not in redis_can_take_course[:]:
+            if self.context['identity'].upper() not in redis_can_take_course[:]:
                 raise serializers.ValidationError('No class active for Matric number')
 
         elif self.context['user_type']=='staff':
@@ -73,6 +73,7 @@ class AuthTokenSerializer(serializers.Serializer):
                 raise serializers.ValidationError('Please report this case to the admin*')
 
         if username and password:
+            username = username.upper()
             user = authenticate(username=username, password=password)
             if user:
                 if not user.is_active:

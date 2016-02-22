@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="58" selection-start="4332" selection-end="4332" vertical-scroll-proportion="0.40697673" vertical-offset="1832" max-vertical-offset="2176">
+            <state line="107" column="45" selection-start="4050" selection-end="4050" vertical-scroll-proportion="-2.64" vertical-offset="1753" max-vertical-offset="2159">
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -52,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="serializers.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teacherpiuser/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="29" selection-start="993" selection-end="993" vertical-scroll-proportion="31.8" vertical-offset="1322" max-vertical-offset="1666">
+            <state line="93" column="20" selection-start="3765" selection-end="3765" vertical-scroll-proportion="0.70348835" vertical-offset="1339" max-vertical-offset="1683">
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -606,23 +606,25 @@
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/rest_framework/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="429" column="8" selection-start="15994" selection-end="15994" vertical-scroll-proportion="0.3314121" vertical-offset="6872" max-vertical-offset="19176" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teacherpiuser/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="29" selection-start="993" selection-end="993" vertical-scroll-proportion="31.8" vertical-offset="1322" max-vertical-offset="1666">
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state line="429" column="8" selection-start="15994" selection-end="15994" vertical-scroll-proportion="0.3314121" vertical-offset="6872" max-vertical-offset="19176">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="58" selection-start="4332" selection-end="4332" vertical-scroll-proportion="0.40697673" vertical-offset="1832" max-vertical-offset="2176">
+        <state line="107" column="45" selection-start="4050" selection-end="4050" vertical-scroll-proportion="-2.64" vertical-offset="1753" max-vertical-offset="2159">
           <folding>
             <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherpiuser/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="20" selection-start="3765" selection-end="3765" vertical-scroll-proportion="0.70348835" vertical-offset="1339" max-vertical-offset="1683">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
