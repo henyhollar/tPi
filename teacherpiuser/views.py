@@ -10,8 +10,7 @@ from django.core.exceptions import PermissionDenied
 
 from django.contrib.auth import get_user_model
 from .models import DefaultPass, MacAddress
-from redis_ds.redis_list import RedisList
-from redis import StrictRedis
+
 
 from ipware.ip import get_ip
 from subprocess import Popen, PIPE

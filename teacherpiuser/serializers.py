@@ -6,6 +6,7 @@ from redis import StrictRedis
 
 from django.contrib.auth import authenticate
 from django.utils.translation import ugettext_lazy as _
+import re
 
 User = get_user_model()
 
@@ -19,22 +20,26 @@ class RegisterSerializer(serializers.ModelSerializer):
     def validate_identity(self, value):
         identity = value.upper()
 
-        if len(identity) in [8, 12, 14]:
+        if any([re.match(r"(([a-z]{2}/)[a-z\d]{5})", identity, re.I),
+                re.match(r"([a-z]{3}/[\d]{4}/[\d]{3})", identity, re.I),
+                re.match(r"([a-z\d]{4}/[\d]{2}/[a-z]{1}/[\d]{4})", identity, re.I)]):
+
             try:
                 User.objects.get(identity=identity)
-                raise serializers.ValidationError('Matric No. already exists. Please report to the admin')
+                raise serializers.ValidationError('Identity already exists. Please report to the admin')
             except User.DoesNotExist:
                 return identity
         else:
-            raise serializers.ValidationError('Matric No. is not valid')
+            raise serializers.ValidationError('Identity is not valid')
 
     #validate the mac address here
     def validate(self, data):
-        try:
-            MacAddress.objects.get(mac_add=self.context['mac_add'])
-            raise serializers.ValidationError('MAC address conflicting or missing, please contact the admin')
-        except MacAddress.DoesNotExist:
-            return data
+        if self.context['mac_add']:
+            try:
+                MacAddress.objects.get(mac_add=self.context['mac_add'])
+            except MacAddress.DoesNotExist:
+                return data
+        raise serializers.ValidationError('MAC address conflicting or missing, please contact the admin')
 
     def save(self):
         password = DefaultPass.objects.get(id=1).password if self.context['user_type'] == 'staff' else 'teacherpiuser'

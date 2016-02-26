@@ -12,7 +12,6 @@ from datetime import datetime
 from .models import Attendance
 
 
-
 class Get_Who_Attended(APIView):
     """
     this class if for the staff to call. It returns the marked attendance with the user information
@@ -30,15 +29,11 @@ class Get_Who_Attended(APIView):
             date_str = '{} {} {}'.format(kwargs['year'], kwargs['month'], kwargs['day'])
             date = datetime.date(datetime.strptime(date_str, '%Y %b %d'))
             attend = attend.filter(date=date)
-            print attend
         for att in attend:
-            print att
-            attendance.append({'first_name': att.user.first_name,
-                          'last_name': att.user.last_name,
-                          'matric_no': att.user.matric_no,
-                          'date': att.date,
-                          'time': att.time,
-                          'course_code': att.course_code
+            attendance.append({'matric_no': att.user.identity,
+                               'date': att.date,
+                               'timestamp': att.timestamp,
+                               'course_code': att.course_code
             })
 
         return Response(attendance)

@@ -7,7 +7,7 @@ class TeacherPiUser(AbstractUser):
 
 
 class DefaultPass(models.Model):
-    password = models.CharField(max_length=20, unique=True, default='pass.electno')
+    password = models.CharField(max_length=20, unique=True, default='pass.elect')
 
 
 class MacAddress(models.Model):
