@@ -1,10 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework import permissions
-from redis_ds.redis_list import RedisList
-#from redis_ds.redis_hash_dict import RedisHashDict
 from rest_framework.response import Response
 from redis import StrictRedis
 from course.models import Course
+from teacherpiuser.views import DeleteAllToken
 from .permissions import CanTakeCourse
 from .serializers import AttendanceSerializer
 
@@ -68,7 +67,7 @@ class ActiveClass(APIView):
     duration: integer
     """
 
-    #permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
     redis_key = 'active_class:'
 
@@ -93,4 +92,22 @@ class ActiveClass(APIView):
         r.expire('{}{}'.format(self.redis_key, course_code), duration*3600)
 
         return Response({'success': 'active_class stored'})
+
+
+class StopActiveClass(APIView):
+    """
+    This section will stop an active class and logs all the students out
+    Parameters required are:
+    course_code: string
+    """
+
+    permission_classes = (permissions.IsAuthenticated,)
+
+    redis_key = 'active_class:'
+
+    def get(self, request):
+        r = StrictRedis(host='localhost', port=6379, db=0)
+        r.delete(r.keys('active_class:*')[0])
+
+        DeleteAllToken()
 
