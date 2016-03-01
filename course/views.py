@@ -40,18 +40,18 @@ class CourseView(APIView):
                               course_code=request.POST.get('course_code').upper(),
                               duration=int(request.POST.get('duration')), course_info=request.POST.get('course_info')
         )
-        return Response({'sucess': 'course registered'})
+        return Response({'success': 'course registered'})
 
     def put(self, request):
         Course.objects.filter(course_code=request.data['course_code']).update(course_title=request.data['course_title'],
                                                                               duration=int(request.data['duration']),
                                                                               course_info=request.data['course_info']
         )
-        return Response({'sucess': 'course updated'})
+        return Response({'success': 'course updated'})
 
     def delete(self, request):
         course = Course.objects.filter(course_code=request.data['course_code']).delete()
-        return Response({'sucess': 'course deleted'})
+        return Response({'success': 'course deleted'})
 
 
 class CanTakeCourse(APIView):

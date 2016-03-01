@@ -3,7 +3,7 @@ from rest_framework import permissions
 from rest_framework.response import Response
 from redis import StrictRedis
 from course.models import Course
-from teacherpiuser.views import DeleteAllToken
+from rest_framework.authtoken.models import Token
 from .permissions import CanTakeCourse
 from .serializers import AttendanceSerializer
 
@@ -46,7 +46,7 @@ class AttendanceView(APIView):
         course_code: string
         duration: integer
     """
-    permission_classes = (permissions.IsAuthenticated, CanTakeCourse)
+    permission_classes = (permissions.IsAuthenticated,)# CanTakeCourse)
 
     def post(self, request):
         serializer = AttendanceSerializer(data=request.data, context={'request': request})
@@ -109,7 +109,7 @@ class StopActiveClass(APIView):
         r = StrictRedis(host='localhost', port=6379, db=0)
         r.delete(r.keys('active_class:*')[0])
 
-        DeleteAllToken()
+        Token.objects.all().delete()
 
         return Response('Class ends successfully')
 
