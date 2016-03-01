@@ -111,3 +111,5 @@ class StopActiveClass(APIView):
 
         DeleteAllToken()
 
+        return Response('Class ends successfully')
+
