@@ -10,6 +10,11 @@ from .serializers import AttendanceSerializer
 from datetime import datetime
 from .models import Attendance
 
+from django.contrib.auth import get_user_model
+from django.core.exceptions import MultipleObjectsReturned
+
+User = get_user_model()
+
 
 class Get_Who_Attended(APIView):
     """
@@ -108,8 +113,13 @@ class StopActiveClass(APIView):
     def get(self, request):
         r = StrictRedis(host='localhost', port=6379, db=0)
         r.delete(r.keys('active_class:*')[0])
-
-        Token.objects.all().delete()
+        try:
+            staff = User.objects.get(is_staff=True)
+            Token.objects.all().exclude(user=staff).delete()
+        except MultipleObjectsReturned:
+            #save message in redis and notify the admin at log in
+            pass    # warn the admin of multiple staff entry possibly due to breach of password
 
         return Response('Class ends successfully')
+
 

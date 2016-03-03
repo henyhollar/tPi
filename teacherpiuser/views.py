@@ -55,16 +55,6 @@ class DeleteToken(APIView):
         return Response('Sign-out successful')
 
 
-class DeleteAllToken(APIView):
-    """
-    this should be called after the active class timed out.
-    """
-
-    def delete(self, request, *args, **kwargs):
-        Token.objects.all().delete()
-        return Response('All users logged out successfully')
-
-
 class ObtainAuthToken(APIView):
     throttle_classes = ()   # set this
     permission_classes = ()

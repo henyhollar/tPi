@@ -98,3 +98,7 @@ def get_time_left(request, course_code):
     ttl = r.ttl('active_class:{}'.format(course_code))
 
     return Response(ttl)
+
+
+#run a background job to check the timer. try django-rq
+#use postgre sql
