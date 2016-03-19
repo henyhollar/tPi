@@ -115,7 +115,7 @@ def get_mac_add(request):
 
 @api_view(['POST'])
 def house_keeping(request):     # bring up a pop up for the instructor after the time out or download automatically
-    date_time = datetime.utcfromtimestamp(request.data['timestamp'])
-    print date_time
-    os.system('date -s %s' % date_time)
+    #date_time = datetime.utcfromtimestamp(request.data['timestamp'])
+    print request.data['timestamp']
+    os.system('date -s %s' % str(request.data['timestamp']))
     return Response('Time set successful')

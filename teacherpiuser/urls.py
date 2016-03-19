@@ -13,7 +13,8 @@ and add it to the header of all subsequent requests.
 urlpatterns = [
     url(r'^login/$', views.obtain_auth_token),
     url(r'^logout/$', views.DeleteToken.as_view()),
-    url(r'^house_keeping/(?P<timestamp>\d+)/$', views.house_keeping),
+    #url(r'^house_keeping/(?P<timestamp>\d+)/$', views.house_keeping),
+    url(r'^house_keeping/(?P<timestamp>[A-Za-z0-9\+:()]+)/$', views.house_keeping),
 ]
 
 
