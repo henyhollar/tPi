@@ -45,6 +45,9 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'jsonfield',
+    'quiz',
+    'file',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,6 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #'django.middleware.security.SecurityMiddleware',
+    'teacherPi.exception_logging_middleware.ExceptionLoggingMiddleware',
 )
 
 ROOT_URLCONF = 'teacherPi.urls'
@@ -112,6 +116,10 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
 AUTH_USER_MODEL = 'teacherpiuser.TeacherPiUser'
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -144,4 +152,9 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     }
+}
+
+LOGGING = {
+    'version': 1,
+    'root': {'level': 'DEBUG' if DEBUG else 'INFO'},
 }

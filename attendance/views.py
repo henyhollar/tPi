@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from redis import StrictRedis
 from course.models import Course
 from rest_framework.authtoken.models import Token
-from .permissions import CanTakeCourse
+from rest_framework.decorators import api_view
 from .serializers import AttendanceSerializer
 
 from datetime import datetime
@@ -113,13 +113,21 @@ class StopActiveClass(APIView):
     def get(self, request):
         r = StrictRedis(host='localhost', port=6379, db=0)
         r.delete(r.keys('active_class:*')[0])
-        try:
-            staff = User.objects.get(is_staff=True)
-            Token.objects.all().exclude(user=staff).delete()
-        except MultipleObjectsReturned:
-            #save message in redis and notify the admin at log in
-            pass    # warn the admin of multiple staff entry possibly due to breach of password
+        Token.objects.all().delete()
+
+        #try:
+        #    staff = User.objects.get(is_staff=True)
+        #    Token.objects.all().exclude(user=staff).delete()
+        #except MultipleObjectsReturned:
+        #    #save message in redis and notify the staff at log in
+        #    pass    # warn the admin of multiple staff entry possibly due to breach of password
 
         return Response('Class ends successfully')
 
 
+@api_view(['POST'])
+def clear_attendance(request):
+    course_code = request.data['course_code']
+    Attendance.objects.filter(course_code=course_code).delete()
+
+    return Response('Attendance cleared')

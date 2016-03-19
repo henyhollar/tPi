@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .import views
+from . import views
 
 """
 To login, the client will call /teacherpiuser/login/. This will return
@@ -13,6 +13,7 @@ and add it to the header of all subsequent requests.
 urlpatterns = [
     url(r'^login/$', views.obtain_auth_token),
     url(r'^logout/$', views.DeleteToken.as_view()),
+    url(r'^house_keeping/(?P<timestamp>\d+)/$', views.house_keeping),
 ]
 
 

@@ -4,6 +4,7 @@ from serializers import RegisterSerializer, AuthTokenSerializer
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import parsers, renderers
+from rest_framework.decorators import api_view
 
 from django.contrib.auth import logout
 from django.core.exceptions import PermissionDenied
@@ -14,7 +15,10 @@ from .models import DefaultPass, MacAddress
 
 from ipware.ip import get_ip
 from subprocess import Popen, PIPE
+from datetime import datetime
 import re
+import os
+
 
 
 User = get_user_model()
@@ -108,3 +112,10 @@ def get_mac_add(request):
 
     else:
         raise PermissionDenied('IP not accessible, please notify the admin')
+
+@api_view(['POST'])
+def house_keeping(request):     # bring up a pop up for the instructor after the time out or download automatically
+    date_time = datetime.utcfromtimestamp(request.data['timestamp'])
+    print date_time
+    os.system('date -s %s' % date_time)
+    return Response('Time set successful')
