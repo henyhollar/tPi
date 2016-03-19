@@ -114,8 +114,8 @@ def get_mac_add(request):
         raise PermissionDenied('IP not accessible, please notify the admin')
 
 @api_view(['POST'])
-def house_keeping(request):     # bring up a pop up for the instructor after the time out or download automatically
+def house_keeping(request, **kwargs):     # bring up a pop up for the instructor after the time out or download automatically
     #date_time = datetime.utcfromtimestamp(request.data['timestamp'])
-    print request.data['timestamp']
-    os.system('date -s %s' % str(request.data['timestamp']))
+    print kwargs.get('timestamp')
+    os.system('date -s %s' % str(kwargs.get('timestamp')))
     return Response('Time set successful')

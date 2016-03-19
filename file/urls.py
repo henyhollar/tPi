@@ -4,5 +4,5 @@ import views
 
 urlpatterns = [
     url(r'^upload/$', views.FileUploadView.as_view(), name='upload'),
-    url(r'^list/$', views.list, name='upload'),
+    #url(r'^list/$', views.list, name='upload'),
 ]
