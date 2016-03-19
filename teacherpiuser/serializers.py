@@ -70,7 +70,7 @@ class AuthTokenSerializer(serializers.Serializer):
             if self.context['identity'].upper() not in redis_can_take_course[:]:
                 raise serializers.ValidationError('No class active for Matric number')
 
-        elif self.context['user_type']=='staff':
+        elif self.context['user_type'] == 'staff':
             d_password = DefaultPass.objects.get(id=1)
             if self.context['password'] == d_password.password:
                 password = d_password.password

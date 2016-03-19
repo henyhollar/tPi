@@ -12,6 +12,7 @@ from .models import Attendance
 
 from django.contrib.auth import get_user_model
 from django.core.exceptions import MultipleObjectsReturned
+from django.db.models import Q
 
 User = get_user_model()
 
@@ -113,20 +114,19 @@ class StopActiveClass(APIView):
     def get(self, request):
         r = StrictRedis(host='localhost', port=6379, db=0)
         r.delete(r.keys('active_class:*')[0])
-        Token.objects.all().delete()
 
-        #try:
-        #    staff = User.objects.get(is_staff=True)
-        #    Token.objects.all().exclude(user=staff).delete()
-        #except MultipleObjectsReturned:
-        #    #save message in redis and notify the staff at log in
-        #    pass    # warn the admin of multiple staff entry possibly due to breach of password
+        try:
+            staff = User.objects.get(is_staff=True)
+            Token.objects.filter(~Q(user=staff)).delete()
+        except MultipleObjectsReturned:
+            Token.objects.all().delete()
+    # warn the admin of multiple staff entry possibly due to breach of password
 
         return Response('Class ends successfully')
 
 
 @api_view(['POST'])
-def clear_attendance(request):
+def clear_attendance(request):  # bring up a pop up for the instructor after the time out or download automatically
     course_code = request.data['course_code']
     Attendance.objects.filter(course_code=course_code).delete()
 
