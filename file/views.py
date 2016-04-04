@@ -2,7 +2,7 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
-from rest_framework.parsers import MultiPartParser, FileUploadParser
+from rest_framework.parsers import MultiPartParser, FormParser
 
 from .models import Document
 
@@ -15,20 +15,20 @@ class FileUploadView(APIView):
     or just use the normal request.data['file]
     """
 
-    parser_classes = (FileUploadParser,)
+    parser_classes = (FormParser, MultiPartParser,)
     permission_classes = (IsAuthenticated, IsAdminUser)
 
     def get(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
-        documents = Document.objects.filter(course=course).values_list('document')
+        documents = Document.objects.filter(course=course).values('document')
 
         return Response(documents)
 
     def post(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
         file_obj = request.FILES['file']
-        note = request.data.get('note', None)
-        doc = Document.objects.create(document=file_obj, course=course, note=note)
+        #note = request.data.get('note', None)
+        doc = Document.objects.create(document=file_obj, course=course)
         doc.save()
 
         return Response('File upload successful')
