@@ -12,8 +12,10 @@ def convert_to_html(request):
     path_to_rst_file = Path(request.data['path'])
     if path_to_rst_file.isfile() and path_to_rst_file.ext == '.rst':
         os.system("landslide {} -i -d {}/media/presentation.html".format(request.data['path'], os.path.dirname(os.path.abspath(__file__))))
+    else:
+        return HttpResponse('HTML slide not created. Please make sure the file has extension .rst')
 
-    return HttpResponse('HTML created successfully')
+    return HttpResponse('HTML slide created successfully')
 
 
 

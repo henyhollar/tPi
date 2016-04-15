@@ -38,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projector/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="26" selection-start="110" selection-end="110" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="425">
+            <state line="15" column="35" selection-start="542" selection-end="542" vertical-scroll-proportion="0.48850575" vertical-offset="0" max-vertical-offset="522">
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -49,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="0.1906542" vertical-offset="0" max-vertical-offset="535">
+            <state line="7" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
@@ -87,12 +87,12 @@
         <option value="$PROJECT_DIR$/teacherPi/settings.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/ja.py" />
-        <option value="$PROJECT_DIR$/projector/views.py" />
         <option value="$PROJECT_DIR$/file/urls.py" />
         <option value="$PROJECT_DIR$/teacherpiuser/models.py" />
         <option value="$PROJECT_DIR$/teacherpiuser/views.py" />
         <option value="$PROJECT_DIR$/file/views.py" />
         <option value="$PROJECT_DIR$/file/models.py" />
+        <option value="$PROJECT_DIR$/projector/views.py" />
       </list>
     </option>
   </component>
@@ -690,19 +690,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projector/views.py">
+    <entry file="file://$PROJECT_DIR$/file/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="110" selection-end="110" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="425">
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
+        <state line="7" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="408">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file/models.py">
+    <entry file="file://$PROJECT_DIR$/projector/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="0.1906542" vertical-offset="0" max-vertical-offset="535">
-          <folding />
+        <state line="15" column="35" selection-start="542" selection-end="542" vertical-scroll-proportion="0.48850575" vertical-offset="0" max-vertical-offset="522">
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
