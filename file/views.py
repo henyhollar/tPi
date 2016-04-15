@@ -7,7 +7,8 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from .models import Document
 
 from course.models import Course
-
+import os
+from django.conf import settings
 
 class FileUploadView(APIView):
     """
@@ -20,18 +21,26 @@ class FileUploadView(APIView):
 
     def get(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
-        documents = Document.objects.filter(course=course).values('document')
+        documents = Document.objects.filter(course=course).values('file_name', 'size', 'date')
 
         return Response(documents)
 
     def post(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
         file_obj = request.FILES['file']
-        #note = request.data.get('note', None)
-        doc = Document.objects.create(document=file_obj, course=course)
+        doc = Document.objects.create(document=file_obj, course=course, size=file_obj.size)
         doc.save()
 
         return Response('File upload successful')
+
+    def delete(self, request, **kwargs):
+        Document.objects.get(file_name=kwargs.get('file_name')).delete()
+        os.remove(os.path.join(settings.MEDIA_ROOT, kwargs.get('file_name')))
+
+        return Response('File delete successful')
+
+
+
 
 
 #class FileUploadView(APIView):

@@ -13,10 +13,12 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 admin.autodiscover()
 
@@ -28,9 +30,19 @@ urlpatterns = [
     url(r'^user/', include('teacherpiuser.urls')),
     url(r'^course/', include('course.urls')),
     url(r'^file/', include('file.urls')),
+    url(r'^projector/', include('projector.urls')),
+
     #url(r'^quiz/', include('quiz.urls')),
 ]
 
+#urlpatterns += staticfiles_urlpatterns()
 
-if settings.DEBUG is True:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
+        }),
+)
