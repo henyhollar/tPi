@@ -7,7 +7,7 @@ def presentation(request):
     return render(request, 'projector/presentation.html')
 
 
-def convert_to_html(request):
+def convert_to_slide(request):
     #gives the full path to the file
     path_to_rst_file = Path(request.data['path'])
     if path_to_rst_file.isfile() and path_to_rst_file.ext == '.rst':
