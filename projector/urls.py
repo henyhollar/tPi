@@ -5,6 +5,6 @@ import views
 
 urlpatterns = [
     url(r'^presentation/$', views.presentation, name='presentation'),
-    url(r'^convert_to_slide/(?P<file_name>[a-zA-Z0-9 ]+)/$', views.convert_to_slide, name='slide'),
+    url(r'^convert_to_slide/(?P<course_code>[A-Z0-9]{6})/(?P<file_name>[a-zA-Z0-9 ]+)/$', views.convert_to_slide, name='slide'),
 ]
 

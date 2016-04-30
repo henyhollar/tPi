@@ -17,7 +17,7 @@ class FileUploadView(APIView):
     """
 
     parser_classes = (FormParser, MultiPartParser,)
-    permission_classes = (IsAuthenticated, IsAdminUser)
+    #permission_classes = (IsAuthenticated, IsAdminUser)
 
     def get(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
@@ -34,6 +34,7 @@ class FileUploadView(APIView):
         return Response('File upload successful')
 
     def delete(self, request, **kwargs):
+        print kwargs.get('file_name')
         Document.objects.get(file_name=kwargs.get('file_name')).delete()
         os.remove(os.path.join(settings.MEDIA_ROOT, kwargs.get('file_name')))
 
