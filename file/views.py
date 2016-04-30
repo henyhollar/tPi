@@ -17,7 +17,7 @@ class FileUploadView(APIView):
     """
 
     parser_classes = (FormParser, MultiPartParser,)
-    #permission_classes = (IsAuthenticated, IsAdminUser)
+    permission_classes = (IsAuthenticated, IsAdminUser)
 
     def get(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
