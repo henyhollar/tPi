@@ -34,11 +34,14 @@ class FileUploadView(APIView):
         return Response('File upload successful')
 
     def delete(self, request, **kwargs):
+        filename = kwargs.get('file_name')
+        course_code = kwargs.get('course_code')
         try:
-            file_path = Document.objects.get(file_name=kwargs.get('file_name'), document=kwargs.get('course_code'))
+            file_path = Document.objects.get(file_name=filename, document='{}/{}'.format(course_code, filename))
         except Document.DoesNotExist:
             return Response('File not in the database')
-        os.remove(os.path.join(settings.MEDIA_ROOT, file_path+"/{}".format(kwargs.get('file_name'))))
+        os.remove(settings.MEDIA_ROOT+'{}'.format(file_path.document))
+        file_path.delete()
 
         return Response('File delete successful')
 

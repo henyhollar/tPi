@@ -102,6 +102,7 @@ obtain_auth_token = ObtainAuthToken.as_view()
 
 
 def get_mac_add(request):
+    #return '00:00:00:00:00'
     ip = get_ip(request)
     if ip is not None:
         pid = Popen(["arp", "-n", ip], stdout=PIPE)

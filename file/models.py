@@ -6,7 +6,12 @@ from course.models import Course
 def file_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/course_code/<filename>
     instance.file_name = filename   # truncate len
-    return '{0}/{1}'.format(instance.course.course_code, filename)
+    path = '{0}/{1}'.format(instance.course.course_code, filename)
+    try:
+        Document.objects.get(file_name=filename)
+        raise Exception('File name already exists')
+    except Document.DoesNotExist:
+        return path
 
 
 class Document(models.Model):
