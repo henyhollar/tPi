@@ -29,30 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projector/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/projector/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="65" selection-start="424" selection-end="424" vertical-scroll-proportion="0.47142857" vertical-offset="56" max-vertical-offset="510">
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2890">
+            <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="-0.04857143" vertical-offset="289" max-vertical-offset="2873">
               <folding />
             </state>
           </provider>
@@ -78,11 +58,11 @@
         <option value="$PROJECT_DIR$/ja.py" />
         <option value="$PROJECT_DIR$/teacherpiuser/models.py" />
         <option value="$PROJECT_DIR$/teacherpiuser/views.py" />
-        <option value="$PROJECT_DIR$/file/models.py" />
         <option value="$PROJECT_DIR$/teacherPi/settings.py" />
         <option value="$PROJECT_DIR$/file/urls.py" />
-        <option value="$PROJECT_DIR$/projector/urls.py" />
+        <option value="$PROJECT_DIR$/file/models.py" />
         <option value="$PROJECT_DIR$/file/views.py" />
+        <option value="$PROJECT_DIR$/projector/urls.py" />
         <option value="$PROJECT_DIR$/projector/views.py" />
       </list>
     </option>
@@ -165,18 +145,8 @@
               <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file" />
+              <option name="myItemId" value="EEE206" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -216,11 +186,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\media\EEE206" />
       <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\media" />
       <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\static" />
       <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\projector\templates\projector" />
       <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\projector\static\projector" />
-      <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\projector" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Eniola\PycharmProjects\teacherPi\media\document\EEE306" />
@@ -627,13 +597,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/file/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2890">
@@ -673,37 +636,9 @@
         <state line="22" column="9" selection-start="707" selection-end="708" vertical-scroll-proportion="0.2605364" vertical-offset="0" max-vertical-offset="2108" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2890">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projector/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="50" selection-start="238" selection-end="238" vertical-scroll-proportion="0.1906542" vertical-offset="0" max-vertical-offset="535">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/course/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="443" selection-end="443" vertical-scroll-proportion="0.317757" vertical-offset="0" max-vertical-offset="535">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="74" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.52897197" vertical-offset="40" max-vertical-offset="986">
           <folding />
         </state>
       </provider>
@@ -715,19 +650,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/media/EEE206/test.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/file/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="397" selection-end="397" vertical-scroll-proportion="0.2542056" vertical-offset="0" max-vertical-offset="535">
+        <state line="7" column="52" selection-start="343" selection-end="343" vertical-scroll-proportion="0.29142857" vertical-offset="0" max-vertical-offset="350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projector/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="82" selection-start="250" selection-end="250" vertical-scroll-proportion="0.29142857" vertical-offset="0" max-vertical-offset="350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="307" selection-end="307" vertical-scroll-proportion="0.35142857" vertical-offset="30" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1267" selection-end="1267" vertical-scroll-proportion="0.51428574" vertical-offset="279" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projector/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="65" selection-start="424" selection-end="424" vertical-scroll-proportion="0.47142857" vertical-offset="56" max-vertical-offset="510">
+        <state line="14" column="76" selection-start="555" selection-end="555" vertical-scroll-proportion="0.48071218" vertical-offset="76" max-vertical-offset="493">
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="-0.04857143" vertical-offset="289" max-vertical-offset="2873">
+          <folding />
         </state>
       </provider>
     </entry>
