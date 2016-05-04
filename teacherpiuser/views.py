@@ -102,17 +102,17 @@ obtain_auth_token = ObtainAuthToken.as_view()
 
 
 def get_mac_add(request):
-    return '00:00:00:00:00'
-    #ip = get_ip(request)
-    #if ip is not None:
-    #    pid = Popen(["arp", "-n", ip], stdout=PIPE)
-    #    s = pid.communicate()[0]
-    #    mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", s).groups()[0]  # use for matric no.
-    #
-    #    return mac
-    #
-    #else:
-    #    raise PermissionDenied('IP not accessible, please notify the admin')
+    #return '00:00:00:00:00'
+    ip = get_ip(request)
+    if ip is not None:
+        pid = Popen(["arp", "-n", ip], stdout=PIPE)
+        s = pid.communicate()[0]
+        mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", s).groups()[0]  # use for matric no.
+
+        return mac
+
+    else:
+        raise PermissionDenied('IP not accessible, please notify the admin')
 
 @api_view(['GET'])
 def house_keeping(request, **kwargs):
