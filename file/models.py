@@ -10,9 +10,7 @@ def file_path(instance, filename):
     else:
         filename = instance.file_name
 
-    print filename
     path = '{0}/{1}'.format(instance.course.course_code, filename)
-    print path, instance.document
 
     try:
         Document.objects.get(file_name=filename)

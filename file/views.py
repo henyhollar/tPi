@@ -10,6 +10,7 @@ from course.models import Course
 import os
 from django.conf import settings
 
+
 class FileUploadView(APIView):
     """
     this attribute must be there on the form at the frontend enctype="multipart/form-data" for request.FILES
