@@ -1,10 +1,12 @@
 Python
 ======
-
 --------------
 
 If
 ==
+.. image:: images.jpg
+
+.. math:: $x^2$
 
 * Please don't use ()
 * Never forget the ``:`` at the end of the line
@@ -14,7 +16,7 @@ Check this code:
 .. sourcecode:: python
 
     x, y = 1, 2
-    if x > y:
+    if $x^2$ > y:
         print 'x is greater'
 
 --------------

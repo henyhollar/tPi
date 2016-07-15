@@ -14,7 +14,7 @@ Check this code:
 .. sourcecode:: python
 
     x, y = 1, 2
-    if x > y:
+    if $x^2$ > y:
         print 'x is greater'
 
 --------------

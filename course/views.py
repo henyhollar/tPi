@@ -12,7 +12,7 @@ class CourseView(APIView):
     """
     can be edited by staff only. The staff can fill in the details of
     the courses here. The course_info can contain the name of the
-    lecturer in charge and some other anouncements
+    lecturer in charge
 
     Parameter for post:
         course_title: string

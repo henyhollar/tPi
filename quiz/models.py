@@ -1,24 +1,24 @@
 from django.db import models
 from course.models import Course
 from jsonfield import JSONField
+from teacherpiuser.models import TeacherPiUser
+
+QUESTION_CHOICES = (
+    (0, "Fill in the gap"),
+    (1, "Single-choice"),
+    (2, "Multi-choice")
+)
 
 
 class Questions(models.Manager):
-    def ordered_questions(self):
-        pass    # give random order to each returned list of questions. Include the id of each question
-
-
-class Topic(models.Model):
     course = models.ForeignKey(Course)
-    topic = models.CharField(max_length=200, unique=True)
+    topic = JSONField()
+    question = JSONField(unique=True)
+    question_type = models.IntegerField(choices=QUESTION_CHOICES, default=1)
+    answers = JSONField(null=True)
 
 
-class Question(models.Model):
-    topic = models.ForeignKey(Topic)
-    question = models.TextField(unique=True)
-    answer = models.TextField(blank=True, null=True)
-
-
-class Submission(models.Model):
-    submission = JSONField()
-    statistics = JSONField()
+class Results(models.Model):
+    user = models.ForeignKey(TeacherPiUser)
+    submission = JSONField()  # store a list of dictionaries
+    mark_obtained = models.IntegerField(blank=True)  # cook a function to obtain the mark from submitted answers
