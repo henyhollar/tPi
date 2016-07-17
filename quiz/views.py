@@ -9,7 +9,7 @@ import json
 
 from rest_framework.views import APIView
 from django.shortcuts import render, HttpResponse
-
+import random
 
 
 def upload_quiz(request, **kwargs):
@@ -24,7 +24,7 @@ def upload_quiz(request, **kwargs):
             file_line_list = file_obj.readlines()
             str_list = filter(bool, file_line_list)
             topic = [line.strip('#').strip() for i, line in enumerate(str_list) if (line.strip('\n').startswith('#') or line.strip('\r\n').startswith('#'))]
-            print topic
+            topic = ' '.join(topic)
             marker_index = [i for i, line in enumerate(str_list) if (line.strip('\n').startswith('--') or line.strip('\r\n').startswith('--'))]
             for i in xrange(len(marker_index)):
                 answer = {}
@@ -107,18 +107,38 @@ class SubmitQuiz(APIView):
     Save the json from the front-end like so:
         {'id':{'option_1':True,'option_2':True}} and
         {'id': {'Gap': 'x^2'}} for fill in the gap type question
+        and return a list of them all at once
     """
 
-    def get(self, request):
-        #mark = Results.objects.get(user=request.user).mark_obtained
-        pass
+    def get(self, request): # code to return stat for the instructor
+        return Results.objects.get(user=request.user).mark_obtained
 
     def post(self, request, **kwargs):
         mark = 0
         res = Results.objects.create(user=request.user, submission=request.data.get('submission'))
-        #for id,answers in json.loads(request.data.get('submission')).items()
-            #real_answers = Questions.objects.get(id=id).answers
-            #if cmp(real_answers,answers) == 0:
-                #mark+=1
+        list_of_submission = json.loads(request.data.get('submission'))
+        for pk, answers in (for element in list_of_submission).items():
+            res.question = pk
+            real_answers = Questions.objects.get(id=pk).answers
+            if cmp(real_answers,answers) == 0:
+                mark += 1
         res.mark_obtained = mark
+
         res.save()
+
+
+def take_quiz(request, **kwargs):
+    # supply with topic and course and the no of questions needed
+    # generate the list of ids of questions and shuffle
+    #return a sliced list (with no_of_questions) of the list above
+
+    course = kwargs.get('course')
+    topic = kwargs.get('topic')
+    no_of_questions = kwargs.get('no_of_questions')
+
+    list_of_question_ids = Questions.objects.filter(course=course, topic=topic).values_list('id', flat=True)
+
+    random.shuffle(list_of_question_ids)
+    shuffled_list_of_questions = list_of_question_ids[:(no_of_questions-1)]
+
+    return Questions.objects.filter(pk__in=shuffled_list_of_questions)

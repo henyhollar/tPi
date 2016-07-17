@@ -12,7 +12,7 @@ QUESTION_CHOICES = (
 
 class Questions(models.Manager):
     course = models.ForeignKey(Course)
-    topic = JSONField()
+    topic = models.CharField(max_length=300, unique=True)
     question = JSONField(unique=True)
     question_type = models.IntegerField(choices=QUESTION_CHOICES, default=1)
     answers = JSONField(null=True)
@@ -20,5 +20,7 @@ class Questions(models.Manager):
 
 class Results(models.Model):
     user = models.ForeignKey(TeacherPiUser)
+    question = models.ForeignKey(Questions)
     submission = JSONField()  # store a list of dictionaries
     mark_obtained = models.IntegerField(blank=True)  # cook a function to obtain the mark from submitted answers
+    date = models.DateField(auto_now=True)
