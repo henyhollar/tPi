@@ -21,6 +21,7 @@ def file_path(instance, filename):
 
 class Document(models.Model):
     file_name = models.CharField(max_length=100, default='new')
+    file_type = models.CharField(max_length=20)
     document = models.FileField(upload_to=file_path, blank=True)
     course = models.ForeignKey(Course)
     size = models.CharField(max_length=10)

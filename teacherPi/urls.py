@@ -31,8 +31,7 @@ urlpatterns = [
     url(r'^course/', include('course.urls')),
     url(r'^file/', include('file.urls')),
     url(r'^projector/', include('projector.urls')),
-
-    #url(r'^quiz/', include('quiz.urls')),
+    url(r'^quiz/', include('quiz.urls')),
 ]
 
 #urlpatterns += staticfiles_urlpatterns()

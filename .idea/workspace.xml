@@ -43,27 +43,70 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="-6.8" vertical-offset="0" max-vertical-offset="272">
+            <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="68" selection-start="4740" selection-end="4740" vertical-scroll-proportion="-1.0863787" vertical-offset="2231" max-vertical-offset="2550">
-              <folding>
-                <element signature="e#27#36#0" expanded="true" />
-              </folding>
+            <state line="131" column="38" selection-start="5532" selection-end="5532" vertical-scroll-proportion="0.0" vertical-offset="2227" max-vertical-offset="2890">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistics.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quiz/statistics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="74" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1275">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="29" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="595">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2890">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="65" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quiz/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="-5.8" vertical-offset="110" max-vertical-offset="493">
+            <state line="25" column="42" selection-start="847" selection-end="847" vertical-scroll-proportion="0.69906545" vertical-offset="0" max-vertical-offset="535">
               <folding />
             </state>
           </provider>
@@ -79,11 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/projector/urls.py" />
-        <option value="$PROJECT_DIR$/teacherPi/settings.py" />
-        <option value="$PROJECT_DIR$/teacherpiuser/views.py" />
-        <option value="$PROJECT_DIR$/file/models.py" />
-        <option value="$PROJECT_DIR$/file/views.py" />
         <option value="$PROJECT_DIR$/test.rst" />
         <option value="$PROJECT_DIR$/media/EEE306/test.html" />
         <option value="$PROJECT_DIR$/media/EEE306/test.rst" />
@@ -93,8 +131,13 @@
         <option value="$PROJECT_DIR$/quiz/jj.py" />
         <option value="$PROJECT_DIR$/course/jj.py" />
         <option value="$PROJECT_DIR$/quiz/urls.py" />
-        <option value="$PROJECT_DIR$/quiz/models.py" />
+        <option value="$PROJECT_DIR$/teacherPi/urls.py" />
+        <option value="$PROJECT_DIR$/file/urls.py" />
+        <option value="$PROJECT_DIR$/quiz/statistics.py" />
+        <option value="$PROJECT_DIR$/file/views.py" />
         <option value="$PROJECT_DIR$/quiz/views.py" />
+        <option value="$PROJECT_DIR$/file/models.py" />
+        <option value="$PROJECT_DIR$/quiz/models.py" />
       </list>
     </option>
   </component>
@@ -130,6 +173,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,23 +192,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -568,11 +597,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2969697" sideWeight="0.62286687" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31666666" sideWeight="0.62286687" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31569967" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3771331" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3771331" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -617,48 +646,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/quiz/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="9" selection-start="4009" selection-end="4009" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1870">
-          <folding>
-            <element signature="e#27#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="26" selection-start="1676" selection-end="1676" vertical-scroll-proportion="0.8093458" vertical-offset="162" max-vertical-offset="1088" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teacherpiuser/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projector/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="547" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projector/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="147" selection-end="147" vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/attendance/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.44041452" vertical-offset="85" max-vertical-offset="408" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/attendance/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.7663552" vertical-offset="378" max-vertical-offset="2346" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teacherpiuser/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.48" vertical-offset="112" max-vertical-offset="391" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
@@ -666,11 +656,6 @@
         <state line="1" column="40" selection-start="69" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="621" max-vertical-offset="2159">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="27.4" vertical-offset="685" max-vertical-offset="2873" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/course/views.py">
@@ -683,26 +668,79 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.84" vertical-offset="21" max-vertical-offset="340" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/teacherPi/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="51" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.4533074" vertical-offset="243" max-vertical-offset="816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherpiuser/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="391" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projector/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projector/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="32" selection-start="147" selection-end="147" vertical-scroll-proportion="0.03256705" vertical-offset="51" max-vertical-offset="799" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quiz/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="-6.8" vertical-offset="0" max-vertical-offset="272">
+        <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quiz/models.py">
+    <entry file="file://$PROJECT_DIR$/quiz/statistics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="-5.8" vertical-offset="110" max-vertical-offset="493">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/quiz/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="68" selection-start="4740" selection-end="4740" vertical-scroll-proportion="-1.0863787" vertical-offset="2231" max-vertical-offset="2550">
-          <folding>
-            <element signature="e#27#36#0" expanded="true" />
-          </folding>
+        <state line="131" column="38" selection-start="5532" selection-end="5532" vertical-scroll-proportion="0.0" vertical-offset="1780" max-vertical-offset="2703">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="42" selection-start="847" selection-end="847" vertical-scroll-proportion="0.69906545" vertical-offset="0" max-vertical-offset="535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="65" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="74" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="29" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="595">
+          <folding />
         </state>
       </provider>
     </entry>

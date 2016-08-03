@@ -9,6 +9,8 @@ import json
 
 from rest_framework.views import APIView
 from django.shortcuts import render, HttpResponse
+from rest_framework.response import Response
+
 import random
 
 
@@ -110,21 +112,24 @@ class SubmitQuiz(APIView):
         and return a list of them all at once
     """
 
-    def get(self, request): # code to return stat for the instructor
-        return Results.objects.get(user=request.user).mark_obtained
+    def get(self, request):  # code to return stat for the student will be called automatically after submission
+        result = Results.objects.filter(user=request.user)  # pass to a stat function
 
     def post(self, request, **kwargs):
         mark = 0
         res = Results.objects.create(user=request.user, submission=request.data.get('submission'))
         list_of_submission = json.loads(request.data.get('submission'))
-        for pk, answers in (for element in list_of_submission).items():
-            res.question = pk
-            real_answers = Questions.objects.get(id=pk).answers
-            if cmp(real_answers,answers) == 0:
-                mark += 1
+        for element in list_of_submission:
+            for pk, submitted_answers in element.items():
+                res.question = pk
+                real_answers = Questions.objects.get(id=pk).answers
+                if cmp(real_answers, submitted_answers) == 0:
+                    mark += 1
         res.mark_obtained = mark
 
         res.save()
+
+        return Response('Your score is: {}. Please check your statistics'.format(mark))
 
 
 def take_quiz(request, **kwargs):
@@ -136,9 +141,25 @@ def take_quiz(request, **kwargs):
     topic = kwargs.get('topic')
     no_of_questions = kwargs.get('no_of_questions')
 
-    list_of_question_ids = Questions.objects.filter(course=course, topic=topic).values_list('id', flat=True)
+    list_of_question_ids = Questions.objects.filter(course=course, topic=topic).values_list('pk', flat=True)
 
     random.shuffle(list_of_question_ids)
     shuffled_list_of_questions = list_of_question_ids[:(no_of_questions-1)]
 
-    return Questions.objects.filter(pk__in=shuffled_list_of_questions)
+    return HttpResponse(Questions.objects.filter(pk__in=shuffled_list_of_questions))
+
+
+def topic(request, **kwargs):
+    # supply with course name
+    course = kwargs.get('course')
+
+    list_of_topics = Questions.objects.filter(course=course).values_list('topic', flat=True)
+
+    list_of_topics = set(list_of_topics)
+
+    return HttpResponse(list_of_topics)
+
+
+def stats(request, **kwargs):
+    student = kwargs.get('student')
+    # calls the statistics function written in pandas

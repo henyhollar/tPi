@@ -29,7 +29,9 @@ class FileUploadView(APIView):
     def post(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
         file_obj = request.FILES['file']
-        doc = Document.objects.create(document=file_obj, course=course, size=file_obj.size)
+        file_type = kwargs.get('file_type')
+
+        doc = Document.objects.create(document=file_obj, course=course, size=file_obj.size, file_type=file_type)
         doc.save()
 
         return Response('File upload successful')
