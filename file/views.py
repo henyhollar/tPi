@@ -22,7 +22,7 @@ class FileUploadView(APIView):
 
     def get(self, request, **kwargs):
         course = Course.objects.get(course_code=kwargs.get('course_code'))
-        documents = Document.objects.filter(course=course).values('file_name', 'size', 'date')
+        documents = Document.objects.filter(course=course).values('file_name', 'size', 'date', 'file_type')
 
         return Response(documents)
 
