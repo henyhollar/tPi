@@ -40,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.3256705" vertical-offset="0" max-vertical-offset="522">
+            <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="-6.8" vertical-offset="0" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
@@ -63,8 +63,48 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="12" selection-start="660" selection-end="668" vertical-scroll-proportion="-13.56" vertical-offset="35" max-vertical-offset="595">
+            <state line="21" column="35" selection-start="620" selection-end="620" vertical-scroll-proportion="-13.6" vertical-offset="0" max-vertical-offset="680">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exception_logging_middleware.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/teacherPi/exception_logging_middleware.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="47" selection-start="446" selection-end="446" vertical-scroll-proportion="0.529595" vertical-offset="0" max-vertical-offset="321">
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="126" column="0" selection-start="3201" selection-end="3201" vertical-scroll-proportion="-56.16" vertical-offset="721" max-vertical-offset="2873">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/file/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="553" selection-end="553" vertical-scroll-proportion="-5.24" vertical-offset="22" max-vertical-offset="1122">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projector/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="65" selection-start="1706" selection-end="1706" vertical-scroll-proportion="-13.88" vertical-offset="197" max-vertical-offset="799">
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,10 +128,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/media/EEE306/test.html" />
         <option value="$PROJECT_DIR$/media/EEE306/test.rst" />
         <option value="$PROJECT_DIR$/media/EEE306/test.cfg" />
-        <option value="$PROJECT_DIR$/projector/views.py" />
         <option value="$PROJECT_DIR$/course/views.py" />
         <option value="$PROJECT_DIR$/quiz/jj.py" />
         <option value="$PROJECT_DIR$/course/jj.py" />
@@ -99,11 +137,13 @@
         <option value="$PROJECT_DIR$/teacherPi/urls.py" />
         <option value="$PROJECT_DIR$/file/urls.py" />
         <option value="$PROJECT_DIR$/quiz/statistics.py" />
-        <option value="$PROJECT_DIR$/file/models.py" />
         <option value="$PROJECT_DIR$/quiz/models.py" />
         <option value="$PROJECT_DIR$/quiz/views.py" />
         <option value="$PROJECT_DIR$/file/views.py" />
         <option value="$PROJECT_DIR$/teacherPi/settings.py" />
+        <option value="$PROJECT_DIR$/projector/views.py" />
+        <option value="$PROJECT_DIR$/file/models.py" />
+        <option value="$PROJECT_DIR$/teacherPi/exception_logging_middleware.py" />
       </list>
     </option>
   </component>
@@ -152,20 +192,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="teacherPi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacherPi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="teacherPi" />
@@ -570,14 +596,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3219697" sideWeight="0.62286687" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3219697" sideWeight="0.67064846" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31569967" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -626,11 +652,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/attendance/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.7663552" vertical-offset="378" max-vertical-offset="2346" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/course/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="24" selection-start="518" selection-end="641" vertical-scroll-proportion="-3.92" vertical-offset="242" max-vertical-offset="1853" />
@@ -656,54 +677,14 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projector/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="147" selection-end="147" vertical-scroll-proportion="0.03256705" vertical-offset="51" max-vertical-offset="799" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="65" selection-start="162" selection-end="162" vertical-scroll-proportion="0.13572854" vertical-offset="0" max-vertical-offset="501" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="69" selection-end="110" vertical-scroll-proportion="24.16" vertical-offset="621" max-vertical-offset="2159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="3201" selection-end="3201" vertical-scroll-proportion="0.7003891" vertical-offset="1765" max-vertical-offset="2873">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="553" selection-end="553" vertical-scroll-proportion="0.20560747" vertical-offset="43" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quiz/statistics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="12" selection-start="660" selection-end="668" vertical-scroll-proportion="-13.56" vertical-offset="35" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quiz/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="42" selection-start="847" selection-end="847" vertical-scroll-proportion="-14.96" vertical-offset="0" max-vertical-offset="493">
           <folding />
         </state>
       </provider>
@@ -719,8 +700,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quiz/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.3256705" vertical-offset="0" max-vertical-offset="522">
+        <state line="11" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="-6.8" vertical-offset="0" max-vertical-offset="272">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="42" selection-start="847" selection-end="847" vertical-scroll-proportion="-14.96" vertical-offset="0" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="553" selection-end="553" vertical-scroll-proportion="-5.24" vertical-offset="22" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projector/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="65" selection-start="1706" selection-end="1706" vertical-scroll-proportion="-13.88" vertical-offset="197" max-vertical-offset="799">
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherPi/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="0" selection-start="3201" selection-end="3201" vertical-scroll-proportion="-56.16" vertical-offset="721" max-vertical-offset="2873">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherpiuser/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="40" selection-start="69" selection-end="110" vertical-scroll-proportion="24.16" vertical-offset="621" max-vertical-offset="2159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="620" selection-end="620" vertical-scroll-proportion="-13.6" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teacherPi/exception_logging_middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="47" selection-start="446" selection-end="446" vertical-scroll-proportion="0.529595" vertical-offset="0" max-vertical-offset="321">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

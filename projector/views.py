@@ -30,7 +30,7 @@ def convert_to_slide(request, **kwargs):    # add the choice of theme or not
                 doc = Document.objects.create(file_name=filename, course=course, size=file_obj.size)
                 #filename = filename.split('.')[0]+'.rst'
                 #doc_rst = Document.objects.get(file_name=filename)
-                doc.document = file_path.split('media/')[1]    #one can use Path to select sub path later
+                doc.document = file_path.split('media/')[1]    # one can use Path to select sub path later
                 doc.save()
     else:
         return HttpResponse('HTML slide not created. Please make sure the file exists or has extension .rst')

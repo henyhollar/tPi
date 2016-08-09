@@ -3,6 +3,11 @@ from django.db import models
 from course.models import Course
 
 
+class SlideConverterError(Exception):
+    def __init__(self, *args, **kwargs):
+        Exception.__init__(self, *args, **kwargs)
+
+
 def file_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/course_code/<filename>
     if instance.file_name == 'new':
@@ -14,7 +19,7 @@ def file_path(instance, filename):
 
     try:
         Document.objects.get(file_name=filename)
-        raise Exception('File name already exists')
+        raise SlideConverterError('')
     except Document.DoesNotExist:
         return path
 
