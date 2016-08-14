@@ -59,7 +59,7 @@ def upload_quiz(request, **kwargs):
 
                     print question_type
                     quest = Questions.objects.create(course=course, topic=topic, question=question,
-                                                     question_type=question_type, answer=answer)
+                                                     question_type=question_type, answers=answer)
                     quest.save()
                 except IndexError:
                     items = str_list[marker_index[i]+1:]
