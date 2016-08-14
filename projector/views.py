@@ -4,6 +4,7 @@ from path import Path
 from file.models import Document
 from course.models import Course
 from django.core.files import File
+from django.conf import settings
 
 
 def presentation(request):
@@ -31,9 +32,16 @@ def convert_to_slide(request, **kwargs):    # add the choice of theme or not
                 #filename = filename.split('.')[0]+'.rst'
                 #doc_rst = Document.objects.get(file_name=filename)
                 doc.document = file_path.split('media/')[1]    # one can use Path to select sub path later
+                doc.file_type = 'NOTES'
                 doc.save()
     else:
         return HttpResponse('HTML slide not created. Please make sure the file exists or has extension .rst')
+
+    filename = kwargs.get('file_name').split('.')[0]+'.rst'
+    course_code = kwargs.get('course_code')
+    file_path = Document.objects.get(file_name=filename, document='{}/{}'.format(course_code, filename))
+    os.remove(settings.MEDIA_ROOT+'{}'.format(file_path.document))
+    file_path.delete()
 
     return HttpResponse('HTML slide created successfully')
 
