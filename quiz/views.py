@@ -10,6 +10,8 @@ import json
 from rest_framework.views import APIView
 from django.shortcuts import render, HttpResponse
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
 
 import random
 
@@ -95,7 +97,7 @@ def upload_quiz(request, **kwargs):
     else:
         return HttpResponse('Quiz not uploaded successfully. Please make sure the file exists or has extension .rst')
 
-    return HttpResponse('Quiz uploaded successfully')
+    return HttpResponse('Quiz successfully processed')
 
 
 # use html tag to import images for multi-part questions
@@ -131,33 +133,40 @@ class SubmitQuiz(APIView):
 
         return Response('Your score is: {}. Please check your statistics'.format(mark))
 
-
+@api_view()
 def take_quiz(request, **kwargs):
     # supply with topic and course and the no of questions needed
     # generate the list of ids of questions and shuffle
     #return a sliced list (with no_of_questions) of the list above
 
-    course = kwargs.get('course')
+    course_code = kwargs.get('course_code')
     topic = kwargs.get('topic')
-    no_of_questions = kwargs.get('no_of_questions')
+    no_of_questions = int(kwargs.get('no_of_questions'))
+
+    course = Course.objects.get(course_code=course_code)
 
     list_of_question_ids = Questions.objects.filter(course=course, topic=topic).values_list('pk', flat=True)
 
+    list_of_question_ids = list(list_of_question_ids)
+
     random.shuffle(list_of_question_ids)
-    shuffled_list_of_questions = list_of_question_ids[:(no_of_questions-1)]
 
-    return HttpResponse(Questions.objects.filter(pk__in=shuffled_list_of_questions))
+    shuffled_list_of_questions = list_of_question_ids[:no_of_questions]
 
+    return Response(Questions.objects.filter(pk__in=shuffled_list_of_questions).values())
 
-def topic(request, **kwargs):
+@api_view()
+def get_topics(request, **kwargs):
     # supply with course name
-    course = kwargs.get('course')
+    course_code = kwargs.get('course_code')
+
+    course = Course.objects.get(course_code=course_code)
 
     list_of_topics = Questions.objects.filter(course=course).values_list('topic', flat=True)
 
     list_of_topics = set(list_of_topics)
 
-    return HttpResponse(list_of_topics)
+    return Response(list_of_topics)
 
 
 def stats(request, **kwargs):
