@@ -9,6 +9,8 @@ from .models import Document
 from course.models import Course
 import os
 from django.conf import settings
+from django.http import HttpResponse
+from path import Path
 
 
 class FileUploadView(APIView):
@@ -49,21 +51,12 @@ class FileUploadView(APIView):
         return Response('File delete successful')
 
 
-
-
-
-#class FileUploadView(APIView):
-#    parser_classes = (FileUploadParser, )
-#    permission_classes = (IsAuthenticated, IsAdminUser)
-#
-#    def post(self, request, **kwargs, format='pdf'):
-#        up_file = request.FILES['file']
-#        destination = open('/Users/Username/{}'.format(**kwargs['course_code']) + up_file.name, 'wb+')
-#        for chunk in up_file.chunks():
-#            destination.write(chunk)
-#            destination.close()
-#
-#        # ...
-#        # do some stuff with uploaded file
-#        # ...
-#        return Response(up_file.name, status.HTTP_201_CREATED)
+def pdf_view(request, **kwargs):
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path_base_dir = Path(base_dir)
+    path_to_pdf_file = path_base_dir.joinpath('media/{}/{}'.format(kwargs.get('course_code'), kwargs.get('file_name')))
+    with open(path_to_pdf_file, 'r') as pdf:
+        response = HttpResponse(pdf.read(),content_type='application/pdf')
+        #response['Content-Disposition'] = 'filename=some_file.pdf'
+        response['Content-Disposition'] = 'inline;filename={}'.format(kwargs.get('file_name'))
+        return response
